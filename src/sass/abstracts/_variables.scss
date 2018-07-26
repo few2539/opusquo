@@ -1,0 +1,144 @@
+// @function em($px, $base) {
+// 	@return ($px / $base) * 1em;
+// }
+
+// viewport size
+$vp-sm: 640;
+$vp-md: 768;
+$vp-lg: 1024;
+$vp-xlg: 1380;
+
+// Breakpoints
+$bp-zero: 0;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xlg: 1200px;
+$bp-xxlg: 1440px;
+$grid-breakpoints: ( zero: $bp-zero, small: $bp-sm, medium: $bp-md, large: $bp-lg, xlarge: $bp-xlg, xxlarge: $bp-xxlg, retina2x: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)');
+// Colors
+//
+// Start with assigning color names to specific hex values.
+$white : #ffffff !default;
+$black : #000000 !default;
+// Create grayscale
+$gray-dark : #a7a7a7 !default;
+$gray : #918884 !default;
+$gray-light : #e7e8e8 !default;
+// Reassign color vars to semantic color scheme
+$brand:                     #663e46 !default;
+$orange:                    #e47837 !default;
+$apricot: 			            #e69e6c !default;
+$dark-purple:               #3f2b2f !default;
+$light-purple:              #7d686c !default;
+$dark-brown:                #6e555a !default;
+$light-yellow:              #fef9f4 !default;
+$light-gray:                #f8f8f8 !default;
+$light-orange:              #fdf8f2 !default;
+$light-purple:              #f5f4f4 !default;
+$dusty-gray:								#9f9d9d !default;
+$congo-brown:								#5a373e !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg : $white !default;
+$body-color : #414340 !default;
+$inverse-bg : $gray-dark !default;
+$inverse-color: $gray-dark !default;
+$arrows-slide:  $dusty-gray !default;
+
+
+// Links
+//
+// Style anchor elements.
+$link-color : $brand !default;
+$link-decoration : none !default;
+$link-hover-color : darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+// Fonts
+// Cormorant Garamond
+$font-cormorantgaramond : 'cormorantgaramond',
+sans-serif !default;
+$font-cormorantgaramond-bold : 'cormorantgaramond_bold',
+sans-serif !default;
+$font-cormorantgaramond-medium : 'cormorantgaramond_medium',
+sans-serif !default;
+$font-cormorantgaramond-semibold : 'cormorantgaramond_semibold',
+sans-serif !default;
+// Poppins
+$font-poppins : 'poppins',
+sans-serif !default;
+$font-poppins-bold : 'poppins_bold',
+sans-serif !default;
+$font-poppins-semibold : 'poppins_semibold',
+sans-serif !default;
+$font-poppins-light : 'poppins_light',
+sans-serif !default;
+$font-poppins-medium : 'poppins_medium',
+sans-serif !default;
+// Icon
+$font-icon-social : 'icon-social',
+sans-serif !default;
+$font-icon : 'icon',
+sans-serif !default;
+$font-base : 18 !default;
+$font-base-mobile: 13 !default;
+$font-weight-normal : normal !default;
+$font-weight-bold : bold !default;
+$color-base : currentColor !default;
+$font-family-base : $font-poppins-light !default;
+$font-size-base : em(16, $font-base) !default;
+$font-weight-base : $font-weight-normal !default;
+$line-height-base : em(22, 16) !default;
+$letter-spacing-base: 0.03em !default;
+$text-transform-base: none !default;
+$margin-bottom-base : 0 !default;
+$font-size-h1: em(84, $font-base) !default;
+$font-size-h2: em(56, $font-base) !default;
+$font-size-h3: em(32, $font-base) !default;
+$font-size-h4: em(16, $font-base) !default;
+$font-size-h5: em(15, $font-base) !default;
+$font-size-h6: em(14, $font-base) !default;
+$headings-color : currentColor !default;
+$headings-font-family : $font-cormorantgaramond !default;
+$headings-font-weight : $font-weight-normal !default;
+$headings-line-height : em(56, 42) !default;
+$headings-letter-spacing: 0.020em !default;
+$headings-text-transform: none !default;
+$headings-margin-bottom : 0 !default;
+$headings-bold-font-family : $font-cormorantgaramond-bold !default;
+$small-font-size : em(13, $font-base) !default;
+$small-font-weight : $font-weight-normal !default;
+$cursor-disabled : not-allowed !default;
+$display-date: 14px !default;
+$display-hero: 84px !default;
+$display-404: 180px !default;
+// Easing
+//
+$linear : cubic-bezier(0.250, 0.250, 0.750, 0.750);
+$easeInQuad : cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeInCubic : cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInQuart : cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeInQuint : cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeInSine : cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeInExpo : cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInCirc : cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeInBack : cubic-bezier(0.600, 0, 0.735, 0.045);
+$easeOutQuad : cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeOutCubic : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeOutQuart : cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeOutQuint : cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeOutSine : cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeOutExpo : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeOutCirc : cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeOutBack : cubic-bezier(0.175, 0.885, 0.320, 1);
+$easeInOutQuad : cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$easeInOutSine : cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$easeInOutExpo : cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInOutCirc : cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$easeInOutBack : cubic-bezier(0.680, 0, 0.265, 1);
+$decEasing : cubic-bezier(0.0, 0.0, 0.2, 1);

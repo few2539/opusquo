@@ -1,0 +1,203 @@
+// @import "../includes";
+
+html.no-touchevents:not(.ie) {
+  overflow: hidden;
+  height: 100%;
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
+  .global-container,
+  .page-container {
+    height: 100%;
+  }
+}
+
+html.touchevents {
+  [data-scrollbar] {
+    display: initial;
+  }
+}
+.wrap {
+  overflow: hidden;
+}
+.main, .footer {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: block;
+}
+.dropdown {
+  position: relative;
+  color: $light-purple;
+  margin: 0;
+  @include media-breakpoint-up(large) {
+    min-width: 115px;
+    @include padd-horz(15px);
+  }
+  .text-box {
+    text-transform: capitalize;
+    position: relative;
+    font-family: $font-poppins-light;
+    border-bottom: 1px solid $light-purple;
+    padding-bottom: percentage(26/$vp-sm);
+    cursor: pointer;
+    @include media-breakpoint-up(large) {
+      border: 0;
+      padding-bottom: 0;
+    }
+    &:after {
+      font-family: "icon";
+      content: '\f107';
+      position: absolute;
+      right: 0;
+      @include transtn(transform .4s);
+      font-size: 26px;
+      @include media-breakpoint-up(large) {
+        position: relative;
+        font-size: 22px;
+        padding-left: 5px;
+        top: 3px;
+      }
+    }
+    .text-label {
+      display: inline-block;
+      float: left;
+    }
+  }
+  .dropdown-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: $light-orange;
+    z-index: 3;
+    @include padd-vert(percentage(62/$vp-sm));
+    ul {
+      list-style: none;
+      list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);
+      list-style-type: none;
+      @include media-breakpoint-up(large) {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        text-transform: capitalize;
+        padding: 3px 0 15px;
+        font-family: $font-poppins-light;
+        @include media-breakpoint-up(large) {
+          padding-left: 10px;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+        &.current {
+          color: $light-purple;
+          span {
+            color: $orange;
+            //border-bottom: solid 1px $dark-purple;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    .dropdown-list {
+      display: block;
+      @include transtn(transform .4s);
+    }
+    .text-box{
+      &:after {
+        @include transform(rotate(-180deg));
+      }
+    }
+
+  }
+  +.dropdown {
+    margin-top: percentage(80/$vp-sm);
+    @include media-breakpoint-up(large) {
+      margin-top: 0;
+    }
+  }
+}
+
+.show-for-small {
+  display: block;
+  @include media-breakpoint-up(large) {
+    display: none;
+  }
+}
+
+.show-for-large {
+  display: none;
+  @include media-breakpoint-up(large) {
+    display: block;
+  }
+}
+
+.fluid-layout {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8.333333333333333%; // NOTE: 1/12
+  padding-right: 8.333333333333333%; // NOTE: 1/12
+  z-index: 1;
+  @include media-breakpoint-up(large) {
+    @include padd-horz(percentage(100/$vp-xlg));
+  }
+}
+[data-col="three"] {
+  @include media-breakpoint-up(large) {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+[data-col="two"] {
+  @include media-breakpoint-up(large) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.flex-row {
+  @include flexRow();
+}
+.bg-light-orange {
+  background-color: $light-orange;
+}
+.bg-congo-brown {
+  background-color: $congo-brown;
+  color: $white;
+  .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{
+    background-color: #211014; background-color: rgba(#4f2d34,1);
+    -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+  }
+
+  .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    background-color: #211014; background-color: rgba(#211014,0.75);
+    -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+  }
+
+  .mCS-my-theme.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #211014; background-color: rgba(#211014,0.85); }
+
+  .mCS-my-theme.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+  .mCS-my-theme.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #211014; background-color: rgba(#211014,0.9); }
+
+  .tabs-buttons {
+    .tabs {
+      li {
+        .btn-tab {
+          background-color: $dark-brown;
+          border: 2px solid $white;
+          color: $white;
+        }
+        &.ui-tabs-active {
+          .btn-tab {
+            background-color: $white;
+            color: $dark-brown;
+          }
+        }
+      }
+    }
+  }
+}

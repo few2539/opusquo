@@ -1,0 +1,192 @@
+.vertical-menu-list-container {
+  position: relative;
+  .vertical-menu-list-inner {
+    @include media-breakpoint-up(large) {
+      @include flexRow();
+    }
+    .image-box {
+      padding-top: percentage(640/645);
+      @include media-breakpoint-up(xlarge) {
+        min-height: 747px;
+      }
+      @include media-breakpoint-up(xxlarge) {
+        min-height: 0;
+      }
+    }
+  }
+  .vertical-menu-col {
+    @include media-breakpoint-up(large) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+.tabs-buttons {
+  position: relative;
+  text-align: center;
+  z-index: 4;
+  backface-visibility: hidden;
+  .tabs {
+    @include flexRow();
+    border: 0;
+    background-color: transparent;
+    @include clearfix();
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    justify-content: center;
+    li {
+      .btn-tab {
+        font-family: $font-cormorantgaramond-semibold;
+        background-color: $white;
+        border: 2px solid $brand;
+        padding: 21px;
+        text-transform: uppercase;
+        color: $brand;
+        transition: all .4s $easeInOutCubic;
+        line-height: 1;
+        min-width: 135px;
+        display: inline-block;
+        text-align: center;
+        @include media-breakpoint-up(large) {
+          padding: 13px 20px 11px;
+        }
+      }
+      &.ui-tabs-active {
+        .btn-tab {
+          background-color: $brand;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+.tabs-content {
+  @include padd-vert(30px);
+  backface-visibility: hidden;
+  @include media-breakpoint-up(large) {
+    padding-top: 44px;
+    padding-bottom: 0;
+  }
+  .btn-download {
+    backface-visibility: hidden;
+    font-size: 18px;
+  }
+}
+html.no-touchevents.ie {
+  .tabs-panel {
+    overflow-y: auto;
+  }
+}
+.tabs-panel {
+  @include padd-horz(24px);
+  overflow-y: hidden;
+  @include media-breakpoint-up(large) {
+    max-height: 400px;
+    padding-right: 40px;
+    padding-left: 63px;
+    padding-bottom: 0;
+  }
+  @include media-breakpoint-up(xxlarge) {
+    max-height: 900px;
+  }
+}
+.tab-menu-download {
+  @include padd-horz(24px);
+  @include media-breakpoint-up(large) {
+    padding-right: 40px;
+    padding-left: 63px;
+    padding-bottom: 0;
+  }
+}
+.tabs-content-row {
+  @include flexRow();
+  .tab-panel-col {
+    flex: 0 0  percentage(420/$vp-sm);
+    max-width:  percentage(420/$vp-sm);
+    &.col-right {
+      flex: 0 0 percentage(220/$vp-sm);
+      max-width: percentage(220/$vp-sm);
+      .flex-row {
+        justify-content: flex-end;
+      }
+    }
+  }
+  +.tabs-content-row {
+    margin-top: 28px;
+  }
+}
+.menu-list-tabs {
+  padding-top: percentage(110/$vp-sm);
+  padding-bottom: percentage(100/$vp-sm);
+  backface-visibility: hidden;
+  @include media-breakpoint-up(large) {
+    padding-top: 95px;
+    padding-bottom: 0;
+  }
+  .heading-box {
+    @include padd-horz(24px);
+    @include media-breakpoint-up(large) {
+      padding-right: 40px;
+      padding-left: 63px;
+    }
+    + .tabs-buttons {
+      margin-top: 15px;
+    }
+  }
+  .heading {
+    @include fp('font-size', 30,45);
+    +.sub-heading {
+      @include media-breakpoint-up(large) {
+        margin-top: 10px;
+      }
+    }
+  }
+  .sub-heading, .btn-tab {
+    @include fp('font-size', 16,15);
+  }
+  .sub-heading, .description {
+    font-family: $font-poppins-light;
+  }
+  .menu-title, .price-label, .currency-label {
+    font-family: $font-poppins-medium;
+    line-height: 22px;
+  }
+  .menu-title {
+    font-size: 16px;
+  }
+  .description {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .price-label {
+    +.currency-label {
+      margin-left: 7px;
+    }
+  }
+}
+.single-slide-container {
+  position: relative;
+  .slide-dots {
+    z-index: 2;
+    backface-visibility: hidden;
+    bottom: 35px;
+  }
+}
+[data-panel-align="left"] {
+  .vertical-menu-col {
+    &:nth-child(1){
+      @include media-breakpoint-up(large) {
+        order: 2;
+      }
+    }
+    &:nth-child(2){
+      @include media-breakpoint-up(large) {
+        order: 1;
+      }
+    }
+  };
+}
+.mCSB_container {
+  backface-visibility: hidden;
+}

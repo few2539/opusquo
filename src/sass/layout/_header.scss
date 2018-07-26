@@ -1,0 +1,285 @@
+@import '../abstracts/variables';
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    padding-top: 5px;
+    padding: 20px;
+    padding-bottom: 30px; //  height: 50px;  
+    transition: .5s; //  line-height: 40px; 
+    border-bottom: solid $brand 2px;
+    .logo {
+        top: 15px;
+        height: 53px;
+        position: absolute;
+        width: 184px;
+        .second-logo{
+            display: none;
+        }
+    }
+    .menu-warp {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .menu:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $brand;
+        transition: width 0.5s ease 0s, left 0.5s ease 0s;
+        width: 0;
+    } // .menu:hover:after {}
+    .menubar {
+        position: relative;
+        margin-left: auto;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 40px;
+        top: 5px;
+        .menu {
+            position: relative;
+            cursor: pointer;
+            padding: 5px 20px;
+            transition: .5s;
+            text-transform: uppercase;
+            font-family: $font-poppins;
+            &.is-current,
+            &:hover {
+                &:after {
+                    color: $white;
+                    width: 100%;
+                    left: 0;
+                }
+            }
+            &.lang {
+                position: relative;
+            }
+        }
+        .es {
+            color: $white;
+            background: $orange;
+        }
+    }
+    &.black {
+        background: #28292b;
+        color: $white;
+        padding: 15px;
+        .logo {
+            .main-logo{
+                display: none;
+            }
+            .second-logo{
+                display: block;
+            }
+        }
+        a {
+            color: $white;
+        }
+        .dropdown-content {
+            background-color: #28292b;
+        }
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    overflow: auto;
+    z-index: 1;
+    right: 0;
+    top: 100%;
+    width: 100% a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    & a:hover {
+        color: #fff;
+        background-color: rgb(231, 12, 12);
+    }
+    &.show {
+        display: block; // background-color: #28292b;
+    }
+}
+
+.toggle {
+    display: none;
+}
+
+@media(max-width:1254px) {
+    .navbar.black a {
+        color: #28292b;
+    }
+    .navbar {
+        background-color: #fff;
+        padding-bottom: 5px;
+        .menu-warp {
+            position: relative;
+            display: block;
+        }
+        .menubar {
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 25%;
+            width: 50%;
+            background-color: $white;
+            text-align: center;
+            .menu-warp>* {
+                display: block;
+                opacity: 0;
+                transform: translate(0, 20px); // transition: opacity .3s ease, transform .3s ease;
+            }
+            &.active {
+                .menu-warp>* {
+                    color: #28292b;
+                    opacity: 1;
+                    transform: translate(0, 0);
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            $duration: .7s;
+                            $delay: .3 * $i +s;
+                            transition: transform $duration ease $delay, opacity $duration ease $delay;
+                        }
+                    }
+                }
+            }
+            .menu {
+                display: block;
+            }
+        }
+    }
+    .toggle {
+        display: block;
+        margin-left: auto;
+        .menu {
+            height: 50px;
+            width: 50px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .hambergerIcon {
+            height: 3px;
+            width: 35px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            background-color: $brand;
+            transform: translate(-50%, -50%) rotate(0deg);
+            transition: all ease 0.5s;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                height: inherit;
+                border-radius: inherit;
+                background-color: inherit;
+                margin: auto;
+                width: 100%;
+                transition: all ease 0.5s;
+            }
+            &::before {
+                top: -9px;
+                left: 0;
+                transform-origin: left;
+            }
+            &::after {
+                bottom: -9px;
+                right: 0;
+                transform-origin: right;
+            }
+        }
+        .open {
+            transform: translate(-50%, -50%) rotate(135deg);
+            &::before {
+                top: 0;
+                transform: translate(50%, 550%) rotate(-90deg);
+            }
+            &::after {
+                bottom: 0;
+                transform: translate(-50%, -550%) rotate(-90deg);
+            }
+        }
+        /*link*/
+    }
+    .navbar {
+        position: relative;
+        justify-content: space-between;
+    }
+    .navbar.black {
+        .menubar.active {
+            .h6.menu.lang.blacktextscroll {
+                color: #28292b;
+            }
+        }
+    }
+}
+
+@media(min-width:1255px) {
+    .menu {
+        padding: 5px 15px !important;
+    }
+    .navbar {
+        .menubar.active {
+            display: flex !important;
+            .menu-warp {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                right: 100px;
+            }
+            .menu.lang {
+                position: relative;
+                right: 100px;
+                color: black;
+            }
+        }
+    }
+    .navbar {
+        .menubar {
+            display: flex !important;
+            .menu-warp {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                right: 100px;
+            }
+            .es {
+                position: absolute;
+                padding: 10px 5px;
+                top: -30%;
+                right: -50px;
+                .menu{
+                    font-family: $font-cormorantgaramond-semibold !important ;   
+                }
+            }
+            .menu.lang {
+                position: relative;
+                right: 100px;
+            }
+        }
+    }
+    .navbar.black {
+        padding: 25px;
+        .menubar.active {
+            display: flex !important;
+        }
+    }
+}

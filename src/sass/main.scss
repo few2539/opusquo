@@ -1,0 +1,52 @@
+// Abstracts
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+
+// Base
+@import
+'base/reset',
+'base/typography',
+'base/base',
+'base/helpers';
+
+// Vendors
+
+@import 'vendors/smooth-scrollbar/smooth-scrollbar';
+@import '../../node_modules/slick-carousel/slick/slick';
+@import '../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+
+// Other vendor stylesheets...
+
+// Layout
+@import
+	'layout/page',
+	'layout/header',
+	'layout/footer';
+
+// Components
+@import
+'components/button',
+'components/icon';
+
+//template
+@import
+	'templates/text',
+	'templates/content_form',
+	'templates/filter_template';
+// Pages
+@import 'pages/home';
+
+// Templates
+@import 'templates/video';
+@import 'templates/block-list';
+@import 'templates/text';
+@import 'templates/grid-masonry';
+@import 'templates/grid-block';
+@import 'templates/hero';
+@import 'templates/carousel';
+@import 'templates/vertical-menu';
+
+
+// Theme
+@import 'themes/default';

@@ -1,0 +1,195 @@
+
+$initial-font: $font-family-base;
+html {
+	font-family: $initial-font;
+	body {
+		font-family: $initial-font;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	&.wf-active {
+		font-family: $initial-font;
+		body {
+			font-family: $initial-font;
+		}
+	}
+}
+
+//
+// Headings
+//
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	color: $headings-color;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: 36px;
+	letter-spacing: $headings-letter-spacing;
+	text-transform: $headings-text-transform;
+	margin: $headings-margin-bottom;
+	b,
+	strong {
+		font-family: $headings-bold-font-family;
+		font-weight: $headings-font-weight;
+	}
+}
+
+.display-date {
+	@include fp(font-size, 14, 14);
+}
+
+.display-hero {
+	@include fp(font-size, 36, 84);
+}
+
+.display-404 {
+	font-size: $display-404;
+}
+
+h1, .h1 {
+	font-size: em($font-size-h1,$font-base);
+  @include media-breakpoint-up(medium) {
+    line-height: 42px;
+  }
+}
+
+h1,
+.h1 {
+	// font-size: $font-size-h1;
+	@include fp(font-size, 30, 56);
+}
+
+h2,
+.h2 {
+	// font-size: $font-size-h2;
+	@include fp(font-size, 30, 45);
+}
+
+h3,
+.h3 {
+	@include fp(font-size, 25, 32); // font-size: $font-size-h3;
+}
+
+h4,
+.h4 {
+	@include fp(font-size, 18, 16); // font-size: em($font-size-h4,$font-base);
+}
+
+h5,
+.h5 {
+	@include fp(font-size, 16, 16); // font-size: em($font-size-h5,$font-base);
+}
+
+h6,
+.h6 {
+	@include fp(font-size, 15, 15); // font-size: em($font-size-h6,$font-base);
+}
+
+p,
+.p,
+ul,
+ul li,
+ol,
+ol li {
+	color: $color-base;
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	letter-spacing: $letter-spacing-base;
+	text-transform: $text-transform-base;
+	margin: $margin-bottom-base;
+	b,
+	strong {
+		font-weight: $font-weight-bold;
+	}
+}
+
+ul,
+ol {
+	margin: 0;
+	-webkit-padding-start: 15px;
+	+ul,
+	+ol,
+	+p,
+	+.p {}
+}
+
+p,
+.p {
+	@include fp(font-size, 15, 15);
+	+ul,
+	+ol,
+	+p,
+	+.p {}
+}
+
+a {
+	//color: $green-dark;
+}
+
+small,
+.small {
+	font-size: $small-font-size;
+	font-weight: $small-font-weight;
+}
+
+// Color
+.text-white {
+	color: $white;
+}
+
+.text-black {
+	color: $black;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.btn-primary {
+	background-color: $brand;
+	font-family: $font-cormorantgaramond-semibold;
+	text-transform: uppercase;
+	color: $light-purple;
+	border: 0;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-top:  15px;
+	padding-bottom:15px;
+}
+//font
+.font-poppins {
+  font-family: $font-poppins;
+}
+.font-poppins-light {
+  font-family: $font-poppins-light;
+}
+.font-cormorant-garamond {
+  font-family: $font-cormorantgaramond;
+}
+
+// Align text
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+
+.text-capitalize {
+	text-transform: capitalize !important;
+}

@@ -1,0 +1,176 @@
+.content {
+    .title {
+        margin-top: 100px;
+        margin-bottom: 30px;
+        >* {
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+    .select-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 60px;
+        >* {
+            &.all {
+                position: relative;
+                .arrowdown {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 16px;
+                    z-index: -1;
+                    &:after {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 2;
+                    }
+                }
+            }
+            &.subcategory {
+                margin-left: percentage(115/1380);
+                margin-right: percentage(115/1380);
+                position: relative;
+                .arrowdown {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 16px;
+                    z-index: -1;
+                    &:after {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 2;
+                    }
+                }
+            }
+
+            
+            select {
+                border: 0;
+                font-family: $font-poppins;
+                color: $brand;
+                -webkit-appearance: none;
+                z-index: 2;
+                background-color: transparent;
+            }
+           
+        }
+        .month {
+            position: relative;
+            .arrowdown {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+                z-index: -1;
+                &:after {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+.warpobject {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $white;
+    margin: 0 -5px;
+    margin-right: percentage(105/1380);
+    margin-left: percentage(105/1380);
+    .col {
+        flex: 0 0 33.333333333333336%;
+        max-width: 33.333333333333336%;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: percentage(35/1380);
+        padding-left: percentage(35/1380);
+        margin-bottom: 70px;
+        width: 33.333333333333336%;
+    }
+    .img-container {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 100%;
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .hover-image {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: $brand;
+            opacity: 0;
+            transition: opacity .4s;
+            &:hover {
+                opacity: 0.9;
+                transition: opacity .4s;
+            }
+            .link-box {
+                opacity: 1;
+                .viewmore {
+                    color: $white;
+                    border: 1px solid $white;
+                    font-family: $font-cormorantgaramond;
+                    padding-left: 2.0264285714285717em;
+                    padding-right: 2.0264285714285717em;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .row-text {
+        padding-top: 30px;
+        .date {
+            font-family: $font-poppins;
+        }
+        .title {
+            font-family: $font-cormorantgaramond;
+        }
+    }
+}
+
+.loadmore {
+    .box-loadmore {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+        .loadmore {
+            border: 1px solid $brand;
+            font-family: $font-cormorantgaramond;
+            padding-left: 2.0264285714285717em;
+            padding-right: 2.0264285714285717em;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+        }
+    }
+}

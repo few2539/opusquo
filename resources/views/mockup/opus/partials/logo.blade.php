@@ -1,0 +1,1 @@
+<img src="{{ CMSHelper::getAssetPath('assets/images/logo/opus-logo.svg') }}">

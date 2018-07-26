@@ -1,0 +1,61 @@
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  padding-top: em(17,22);
+  padding-bottom: em(17,22);
+  padding-left: em(25,17);
+  padding-right: em(25,17);
+  margin: 0;
+  border: 0;
+  min-width: 176px;
+  background-color: transparent;
+  color: currentColor;
+  font-family: $font-cormorantgaramond-semibold;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+
+  span, svg {
+    color: currentColor;
+    position: relative;
+    display: block;
+    z-index: 1;
+  }
+  svg {
+    fill: currentColor;
+  }
+
+  &.is-filled {
+    color: $white;
+    background-color: $dark-purple;
+  }
+
+  &.is-large {
+    min-height: 58px;
+    padding-top: 13px;
+  }
+  &.is-small {
+    min-height: 43px;
+    min-width: 0;
+  }
+  &.btn-outline {
+    border: solid 1px;
+  }
+  &.btn-underline {
+    text-decoration: underline;
+    padding: 15px 0;
+    min-width: 0;
+    &:hover {
+      span {
+        color: $orange;
+      }
+    }
+  }
+}
